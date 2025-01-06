@@ -1,9 +1,9 @@
 <h1 align="center">
      Gestão de Stock 
 </h1>
- <h1 align="center">
+ <h2 align="center">
      Sistema de Gestão de Stock (entrada e saída de produto) 
-</h1>
+</h2>
 
 
  ## Este sistema consiste em:
