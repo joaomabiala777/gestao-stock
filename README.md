@@ -14,30 +14,30 @@
  - Quantidade de saida
  - Imprimir o Relatorio
 
-
-![](./.tumbl/1-dashboard.png)
 ### Dashboard
+![](./.tumbl/1-dashboard.png)
 
-![](./.tumbl/2-telaCadastro.png)
 ### Tela de Cadastro
+![](./.tumbl/2-telaCadastro.png)
 
-![](./.tumbl/3-cadastro.png)
 ### Cadastro de Produto
+![](./.tumbl/3-cadastro.png)
 
-![](./.tumbl/4-editar.png)
 ### Editar Produto
+![](./.tumbl/4-editar.png)
 
-![](./.tumbl/5-telaVenda.png)
 ### Tela de Venda
+![](./.tumbl/5-telaVenda.png)
 
-![](./.tumbl/6-venda.png)
 ### Venda de Produto
+![](./.tumbl/6-venda.png)
 
-![](./.tumbl/7-Stock.png)
 ### Produtos em Stock
+![](./.tumbl/7-Stock.png)
 
-![](./.tumbl/8-relatorio.png)
 ### Relatorio
+![](./.tumbl/8-relatorio.png)
+
 
 
 
