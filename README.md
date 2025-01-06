@@ -9,7 +9,7 @@
  ## Este sistema consiste em:
  - Cadastrar Produtos
  - Vender Produtos
- - Mostrar Produtos total em Stock
+ - Mostrar total de produtos em Stock
  - Quantidades de Entrada
  - Quantidade de saida
  - Imprimir o Relatorio
