@@ -1,4 +1,6 @@
-# gestao-stock
+<h1 align="center">
+     Gestão de Stock 
+</h1>
  <h1 align="center">
      Sistema de Gestão de Stock (entrada e saída de produto) 
 </h1>
@@ -12,4 +14,4 @@
  - Quantidade de saida
  - Imprimir o Relatorio
 
-![](./.tumbl/1 - dashboard.png)
+![](./.tumbl/1-dashboard.png)
