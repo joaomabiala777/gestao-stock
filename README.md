@@ -21,7 +21,7 @@
 ![](./.tumbl/2-telaCadastro.png)
 ### Tela de Cadastro
 
-![](./.tumbl/3-Cadastro.png)
+![](./.tumbl/3-cadastro.png)
 ### Cadastro de Produto
 
 ![](./.tumbl/4-editar.png)
