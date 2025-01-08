@@ -1,15 +1,15 @@
 <h1 align="center">
      Gestão de Stock 
 </h1>
- <h1 align="center">
+ <h2 align="center">
      Sistema de Gestão de Stock (entrada e saída de produto) 
-</h1>
+</h2>
 
 
  ## Este sistema consiste em:
  - Cadastrar Produtos
  - Vender Produtos
- - Mostrar Produtos total em Stock
+ - Mostrar total de produtos em Stock
  - Quantidades de Entrada
  - Quantidade de saida
  - Imprimir o Relatorio
@@ -21,7 +21,7 @@
 ![](./.tumbl/2-telaCadastro.png)
 
 ### Cadastro de Produto
-![](./.tumbl/3-Cadastro.png)
+![](./.tumbl/3-cadastro.png)
 
 ### Editar Produto
 ![](./.tumbl/4-editar.png)
@@ -37,6 +37,7 @@
 
 ### Relatorio
 ![](./.tumbl/8-relatorio.png)
+
 
 
 
