@@ -13,6 +13,7 @@
  - Quantidades de Entrada
  - Quantidade de saida
  - Imprimir o Relatorio
+ - Baixar o relatório em exel
 
 ### Dashboard
 ![](./.tumbl/1-dashboard.png)
