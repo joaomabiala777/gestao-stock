@@ -1,0 +1,25 @@
+CREATE DATABASE Gestao_Stock;
+USE Gestao_Stock;
+
+CREATE TABLE tb_Produto(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+preco DECIMAL(20,2),
+qtd INT(80)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DESCRIBE tb_Produto;
+
+
+CREATE TABLE tb_Venda(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20),
+preco DECIMAL(20,2),
+qtd INT(80),
+data_venda timestamp default current_timestamp
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DESCRIBE tb_Venda;
+
+CREATE TABLE tb_Entrada(
+id INT AUTO_INCREMENT PRIMARY KEY,
+qtd INT(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
