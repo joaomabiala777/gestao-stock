@@ -15,7 +15,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(20),
 preco DECIMAL(20,2),
 qtd INT(80),
-data_venda DATE
+data_venda timestamp default current_timestamp
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 DESCRIBE tb_Venda;
 

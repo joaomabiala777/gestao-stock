@@ -38,7 +38,7 @@ include_once "Controller/conexao.php";
           <i class="fa-solid fa-money-bill-1 text-primary mr-2"></i>Venda</a></li>
           <li><a href="stock.php">
           <i class="fa fa-line-chart text-primary mr-2"></i>Em Stock</a></li>
-          <li><a href="#">Sair</a></li>
+          <li><a href="sair.php"> <i class="fa fa-sign-out text-primary mr-2" aria-hidden="true"></i> Sair</a></li>
         </ul>
       </div>
     <main>

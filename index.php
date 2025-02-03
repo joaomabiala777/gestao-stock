@@ -51,7 +51,32 @@
         $totaisVend[] = $totalProdutoVenda;
     }
 
-// Passar os dados do vetor para o JavaScript
+
+// BAR CHART
+$dataBar = array( 
+	array("y" => 3373.64, "label" => "Germany" ),
+	array("y" => 2435.94, "label" => "France" ),
+	array("y" => 1842.55, "label" => "China" ),
+	array("y" => 1828.55, "label" => "Russia" ),
+	array("y" => 1039.99, "label" => "Switzerland" ),
+	array("y" => 765.215, "label" => "Japan" ),
+	array("y" => 612.453, "label" => "Netherlands" )
+);
+
+
+$res = "SELECT * FROM tb_Venda";
+    $resChart = $conn->query($res);
+
+    // Vetor para armazenar os totais
+    $test = array();
+
+    $count = 0;
+    // Loop para calcular o total de cada produto
+    while ($linha = $resChart->fetch_assoc()) {
+        $test[$count] ["label"] = $linha["nome"];
+        $test[$count] ["y"] = $linha["qtd"];
+        $count = $count+1;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +97,53 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <title>GStock</title>
     
-    <script src="js/chart.js"></script>
     
+<script>
+window.onload = function() {
+ 
+             var chart = new CanvasJS.Chart("chartBar", {
+                 animationEnabled: true,
+                 theme: "light2",
+                 title:{
+                     text: "Produtos Vendidos"
+                 },
+                axisY: {
+                    title: "Grafico de Vendas"
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,##0.## tonnes",
+                    dataPoints: <?php echo json_encode($test, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
+            
+
+            var chartPie = new CanvasJS.Chart("chartPie", {
+                 theme: "light2",
+                    animationEnabled: true,
+                    title: {
+                        text: "Estatística de Vendas"
+                    },
+                    data: [{
+                        type: "pie",
+                        indexLabel: "{y}",
+                        yValueFormatString: "#,##0.00\"%\"",
+                        indexLabelPlacement: "inside",
+                        indexLabelFontColor: "#36454F",
+                        indexLabelFontSize: 18,
+                        indexLabelFontWeight: "bolder",
+                        showInLegend: true,
+                        legendText: "{label}",
+                    dataPoints: <?php echo json_encode($test, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chartPie.render();
+
+            }
+            
+
+    </script>
 </head>
 
 <body>
@@ -92,27 +162,27 @@
           <i class="fa-solid fa-money-bill-1 text-primary mr-2"></i>Venda</a></li>
           <li><a href="stock.php">
           <i class="fa fa-line-chart text-primary mr-2"></i>Em Stock</a></li>
-          <li><a href="#">Sair</a></li>
+          <li><a href="sair.php"><i class="fa fa-sign-out text-primary mr-2" aria-hidden="true"></i>Sair</a></li>
         </ul>
       </div>
     
     <main>
         <div class="d-flex w-100 justify-content-around">
             <div class="shadow-lg badge py-1 px-5 mr-4 mb-5 rounded entrada">
-                <h4>Entrada</h4>
+                <h4><i class="fa-solid fa-arrow-trend-down text-dark mr-2"></i>Entrada</h4>
                 <p class="entrada"><?php
                     echo $totalQtd;
                 ?></p>
             </div>
             <div class="shadow-lg badge py-1 px-5 mr-4 mb-5 rounded saida">
-                <h4>Saída</h4>
+                <h4><i class="fa-solid fa-right-to-bracket text-dark mr-2"></i>Saída</h4>
                 <p class="saida"><?php                
                     echo $totalVenda; 
                  ?></p>
             </div>
 
             <div class="shadow-lg badge py-1 px-5 mr-4 mb-5 rounded total">
-                <h4>Total</h4>
+                <h4><i class="fa-solid fa-chart-simple text-dark mr-2"></i>Total</h4>
                 <p class="total"> <?php
                 $totalMax = 0;
                 $totalMax = $totalQtd - $totalVenda;
@@ -122,12 +192,13 @@
         </div>
         <div class="d-flex h-50 w-100 justify-content-around">
         <div class="card w-100 mr-4 shadow-lg">
-            <canvas id="barChart" style="width:100%"></canvas>
+            <div id="chartBar" style="height: 370px; width: 100%;"></div>
+
             
         </div>
         
         <div class="card px-5 w-75 shadow-lg">
-            <canvas id="myChart" style="width:50%"></canvas>
+            <div id="chartPie" style="height: 370px; width: 100%;"></div>
             
         </div>
         </div>
@@ -140,7 +211,7 @@
 
      
     <!-- Scripts Bootstrap do jQuery -->
-    <script src="js/mychart.js"></script>
+    <script src="js/canvasjs.min.js"></script>
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
