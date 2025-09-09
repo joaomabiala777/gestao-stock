@@ -1,5 +1,5 @@
 <?php
-    $host = "localhost";
+    $host = "mysql";
     $user = "root";
     $password = "";
     $dbname = "gestao_stock";
