@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: meu_php
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - minha_rede
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: meu_mysql
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # ← sem senha
+      MYSQL_DATABASE: gestao_stock
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - minha_rede
+
+  phpmyadmin:
+    container_name: meu_phpmyadmin
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: ""       # ← senha vazia
+      PMA_ARBITRARY: 1 
+    depends_on:
+      - mysql
+    networks:
+      - minha_rede
+
+volumes:
+  mysql_data:
+
+networks:
+  minha_rede:
